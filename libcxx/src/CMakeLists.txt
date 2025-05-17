@@ -102,7 +102,7 @@ if(WIN32)
     support/win32/support.cpp
     )
 
-  if (NOT LIBCXX_HAS_PTHREAD_API)
+  if (LIBCXX_ENABLE_THREADS AND NOT LIBCXX_HAS_PTHREAD_API)
     list(APPEND LIBCXX_SOURCES
       support/win32/thread_win32.cpp
       )
